@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2Examen231051103.UbicacionesGuardados">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemSelected="ubicacionesGuardadas_ItemSelected" RowHeight="200" x:Name="ubicacionesGuardadas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Grid.Column="0"
+                                       Grid.Row="0"
+                                       Margin="5,0,0,0"
+                                       Text="Nombre:"
+                                       TextColor="Black"
+                                       FontSize="15" />
+                                <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       TextColor="Red"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       Text="{Binding latitud}" />
+
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="ëliminar"
+                    Text="Eliminar" 
+                    Clicked="eliminar_Clicked"
+                    Margin="10,-10,10,2"
+                    CornerRadius="5"
+                    BackgroundColor="#64B5F6"
+                    TextColor="Black"
+                    FontAttributes="Bold"/>
+
+            <Button x:Name="vermapa" 
+                    Text="Ver Mapa" 
+                    Clicked="vermapa_Clicked"
+                    Margin="10,-10,10,2"
+                    CornerRadius="5"
+                    BackgroundColor="#64B5F6"
+                    TextColor="Black"
+                    FontAttributes="Bold"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
