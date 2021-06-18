@@ -3,8 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="PM2Examen231051103.VerMapa">
-
-    <maps:Map HorizontalOptions="FillAndExpand"
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map HorizontalOptions="FillAndExpand"
              VerticalOptions="FillAndExpand" x:Name="mapas" IsShowingUser="True"/>
+            <Label x:Name="id" IsVisible="false"
+                                       Text="{Binding mapaId}"/>
+            <Label x:Name="latitud" IsVisible="false"
+                                       Text="{Binding mapalatitud}"/>
+            <Label x:Name="longitud" IsVisible="false"
+                                       Text="{Binding mapalongitud}"/>
+            <Label x:Name="larga" IsVisible="false"
+                                       Text="{Binding mapadescriplarga}"/>
+            <Label x:Name="corta" IsVisible="false"
+                                       Text="{Binding mapadescripcorta}"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+
+    
 
 </ContentPage>

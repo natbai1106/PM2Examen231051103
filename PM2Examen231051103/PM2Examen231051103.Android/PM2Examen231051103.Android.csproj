@@ -93,13 +93,19 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <AndroidResource Include="Resources\drawable\mundi.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PM2Examen231051103\PM2Examen231051103.csproj">
       <Project>{C5C0F21B-B213-4C18-B5C5-6B537AE73B34}</Project>
       <Name>PM2Examen231051103</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\uth35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mundoavion.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

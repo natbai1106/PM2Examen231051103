@@ -1,37 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PM2Examen231051103.MainPage">
+             xmlns:local="clr-namespace:PM2Examen231051103"
+             x:Class="PM2Examen231051103.MainPage"
+             BackgroundImage="mundoavion.jpg">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Nueva Ubicación" x:Name="nuevaUbic"
+                     IconImageSource="example_icon.png"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="nuevaUbic_Clicked"/>
         <ToolbarItem Text="Ubicaciones Salvadas" x:Name="ubicacionSalvadas"
                      IconImageSource="example_icon.png"
                      Order="Primary"
                      Priority="0"
                      Clicked="ubicacionSalvadas_Clicked"/>
     </ContentPage.ToolbarItems>
-
     <StackLayout>
-        <Label Text="Latitud Actual"/>
-        <Entry x:Name="latitudActual" 
-               IsReadOnly="False"/>
-
-        <Label Text="Longitud Actual"/>
-        <Entry x:Name="longitudActual" 
-               IsReadOnly="False"/>
+        <Image Source="uth35.png" Margin="0,0,0,20"
+               BackgroundColor="White" Opacity="0.8"/>
         
-        <Label Text="Describa la ubicación"/>
-        <Editor x:Name="descripLarga" 
-                HeightRequest="100"/>
+        <Label Text="Latitud Actual" FontSize="Large" FontAttributes="Bold" TextColor="Black" Margin="10,0,0,0"/>
+        <Grid>
+            <Frame Padding="0" CornerRadius="15" Margin="10,5,10,10" BackgroundColor="Gray" Opacity="0.9">
+                <Entry x:Name="latitudActual" Margin="10,5,10,10" IsReadOnly="True" FontAttributes="Bold" TextColor="Black"></Entry>
+            </Frame>
+        </Grid>
 
-        <Label Text="Descripción Corta"/>
-        <Editor x:Name="descripCorta"/>
+        <Label Text="Longitud Actual" FontSize="Large" FontAttributes="Bold" TextColor="Black" Margin="10,0,0,0"/>
+        <Grid>
+            <Frame Padding="0" CornerRadius="15" Margin="10,5,10,10" BackgroundColor="Gray" Opacity="0.9">
+                <Entry x:Name="longitudActual" Margin="10,5,10,10" IsReadOnly="True" FontAttributes="Bold" TextColor="Black"></Entry>
+            </Frame>
+        </Grid>
+        
+        <Label Text="Describa la ubicación" FontSize="Large" FontAttributes="Bold" TextColor="Black" Margin="10,0,0,0"/>
+        <Grid>
+            <Frame Padding="0" CornerRadius="15" Margin="10,5,10,10" BackgroundColor="Gray" Opacity="0.9">
+                <Editor x:Name="descripLarga" Margin="10,5,10,10" HeightRequest="80" IsReadOnly="False" FontAttributes="Bold" TextColor="Black"></Editor>
+            </Frame>
+        </Grid>
+        
+        <Label Text="Descripción Corta" FontSize="Large" FontAttributes="Bold" TextColor="Black" Margin="10,0,0,0"/>
+        <Grid>
+            <Frame Padding="0" CornerRadius="15" Margin="10,5,10,10" BackgroundColor="Gray" Opacity="0.9">
+                <Entry x:Name="descripCorta" Margin="10,5,10,10" IsReadOnly="False" FontAttributes="Bold" TextColor="Black"></Entry>
+            </Frame>
+        </Grid>
 
-        <Button x:Name="salvarUbicacion" 
-                Text="Salvar Ubicación"
-                Clicked="salvarUbicacion_Clicked"/>
-        <Button x:Name="ubicacionesSalvadas" 
-                Text="Ubicaiones Salvadas"
-                Clicked="ubicacionesSalvadas_Clicked"/>
+        <Grid Padding="10">
+            <Button x:Name="salvarUbicacion" 
+                    Text="Salvar Ubicación"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Clicked="salvarUbicacion_Clicked"
+                    BackgroundColor="#64B5F6"
+                    HeightRequest="55"
+                    CornerRadius="15"/>
+
+            <Button x:Name="ubicacionesSalvadas" 
+                    Text="Ubicaciones Salvadas"
+                    Grid.Row="0"
+                    Grid.Column="1"                    
+                    Clicked="ubicacionesSalvadas_Clicked"
+                    BackgroundColor="#64B5F6"
+                    HeightRequest="55"
+                    CornerRadius="15"/>
+        </Grid>
     </StackLayout>
-    
 </ContentPage>

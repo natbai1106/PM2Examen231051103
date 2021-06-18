@@ -24,6 +24,15 @@ namespace PM2Examen231051103
         {
             InitializeComponent();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SQLiteConnection connection = new SQLiteConnection(App.UbicacionDB);
+            connection.CreateTable<Direcciones>();
+            var listadirecciones = connection.Table<Direcciones>().ToList();
+            ubicacionesGuardadas.ItemsSource = listadirecciones;
+            connection.Close();
+        }
 
         private void ubicacionesGuardadas_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -41,12 +50,28 @@ namespace PM2Examen231051103
 
         private void eliminar_Clicked(object sender, EventArgs e)
         {
+            string x = Convert.ToString(id);
 
+            SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB);
+            var listadirecciones = conexion.Query<Direcciones>($"Delete FROM Direcciones WHERE Id = '" + x + "' ");
+            conexion.Close();
+
+            DisplayAlert("Aviso", "Se ha eliminado a " + latitud + " de la lista de direciones", "Ok");
         }
 
         private async void vermapa_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new VerMapa());
+            var irmapa = new irMapa()
+            {
+                mapaId = id,
+                mapalatitud = latitud,
+                mapalongitud = longitud,
+                mapadescriplarga = descrilarga,
+                mapadescripcorta = descricorta
+            };
+            var vermapa = new VerMapa();
+            vermapa.BindingContext = irmapa;
+            await Navigation.PushAsync(vermapa);
         }
     }
 }
