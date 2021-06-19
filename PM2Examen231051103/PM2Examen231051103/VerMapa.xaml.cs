@@ -31,11 +31,6 @@ namespace PM2Examen231051103
             ubicacion.Type = PinType.Place;
             mapas.Pins.Add(ubicacion);
 
-            ////var localizacion = await Geolocation.GetLastKnownLocationAsync();
-            //if (localizacion == null)
-            //{
-            //    localizacion = await Geolocation.GetLocationAsync();
-            //}
             mapas.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(latitudmapa, longitudmapa),Distance.FromKilometers(1)));
         }
     }

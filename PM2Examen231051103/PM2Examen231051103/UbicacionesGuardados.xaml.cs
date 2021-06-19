@@ -45,7 +45,7 @@ namespace PM2Examen231051103
                 descrilarga = ubicGuardada.descriplarga;
                 descricorta = ubicGuardada.descripcorta;
             }
-            DisplayAlert("Aviso", "Se ha seleccionado a " + latitud + " de la lista de direcciones", "Ok");
+            DisplayAlert("Aviso", "Se ha seleccionado a la ubicación con Latitud " + latitud + " y Longitud " + latitud, "Ok");
         }
 
         private void eliminar_Clicked(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace PM2Examen231051103
             var listadirecciones = conexion.Query<Direcciones>($"Delete FROM Direcciones WHERE Id = '" + x + "' ");
             conexion.Close();
 
-            DisplayAlert("Aviso", "Se ha eliminado a " + latitud + " de la lista de direciones", "Ok");
+            DisplayAlert("Aviso", "Se ha eliminado a la ubicación con Latitud " + latitud + " y Longitud " + latitud, "Ok");
         }
 
         private async void vermapa_Clicked(object sender, EventArgs e)

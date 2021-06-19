@@ -57,9 +57,9 @@ namespace PM2Examen231051103
                         resultado = connection.Insert(direcciones);
 
                         if (resultado > 0)
-                            DisplayAlert("Aviso", "Adicionado", "Ok");
+                            DisplayAlert("Mensaje", "La ubicación a sido guardada", "Ok");
                         else
-                            DisplayAlert("Aviso", "Error", "Ok");
+                            DisplayAlert("Mensaje", "Hubo un ERROR", "Ok");
                     }
 
                     resultado = 0;
@@ -94,12 +94,12 @@ namespace PM2Examen231051103
                 }
                 else
                 {
-                    DisplayAlert("Mensaje", "Debe ingresar una Descripcion Corta", "Ok");
+                    DisplayAlert("Mensaje", "Debe ingresar una Descripción Corta", "Ok");
                 }
             }
             else 
             {
-                DisplayAlert("Mensaje","Debe ingresar una Descripcion Larga","Ok");
+                DisplayAlert("Mensaje","Debe ingresar una Descripción Larga","Ok");
             }
             
         }
